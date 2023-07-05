@@ -1,8 +1,5 @@
-tidy:
-	GOPROXY=https://proxy.golang.org go mod tidy
-
 build:
-	GOPROXY=https://proxy.golang.org go build
+	go build
 
 test:
 	go test ./...
@@ -10,5 +7,8 @@ test:
 clean:
 	go clean
 
-.PHONY: build test clean
+generate:
+	go generate ./...
+
+.PHONY: build test clean generate
 
