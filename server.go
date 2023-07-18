@@ -12,6 +12,7 @@ import (
 )
 
 const defaultPort = "8080"
+const expoOrigin = "http://localhost:8081"
 
 func main() {
 	router := chi.NewRouter()
@@ -19,7 +20,7 @@ func main() {
 	// Add CORS middleware around every request
 	// See https://github.com/rs/cors for full option listing
 	router.Use(cors.New(cors.Options{
-		AllowedOrigins:   []string{"http://localhost:8080", "http://localhost:19000"},
+		AllowedOrigins:   []string{"http://localhost:8080", expoOrigin},
 		AllowCredentials: true,
 		Debug:            true,
 	}).Handler)
